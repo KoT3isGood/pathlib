@@ -2,6 +2,7 @@
 *.vcxproj.user
 *.vcxproj.filters
 .git
-zig-out
-zig-cache
+zig-out/
+zig-cache/
+[Dd]ebug
 logs/

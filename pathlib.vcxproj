@@ -63,8 +63,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <NMakeOutput>pathlib.exe</NMakeOutput>
+    <NMakeOutput>zig-out/bin/pathlibtest.exe</NMakeOutput>
     <NMakePreprocessorDefinitions>_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>zig build</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>zig build</NMakeReBuildCommandLine>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <NMakeOutput>pathlib.exe</NMakeOutput>
@@ -81,6 +83,7 @@
   <ItemDefinitionGroup>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="example\main.cpp" />
     <ClCompile Include="src\pathaudio.cpp" />
     <ClCompile Include="src\pathdevice.cpp" />
     <ClCompile Include="src\pathdraw.cpp" />
