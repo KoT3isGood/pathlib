@@ -27,7 +27,7 @@ pub fn build(b: *std.Build) void {
     exe.addCSourceFiles(.{
         .files = &.{"example/main.cpp"},
     });
-    exe.addLibraryPath(.{ .path = "" });
+    exe.addLibraryPath(.{ .path = "zig-out/lib" });
     exe.linkSystemLibrary("pathlib");
     b.installArtifact(exe);
     const run_cmd = b.addRunArtifact(exe);

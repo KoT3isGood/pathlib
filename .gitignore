@@ -6,3 +6,4 @@ zig-out/
 zig-cache/
 [Dd]ebug
 logs/
+*.log

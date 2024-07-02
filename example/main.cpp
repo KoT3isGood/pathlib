@@ -1,5 +1,8 @@
+#include "../src/pathlib.h"
 int main() {
-	while (true) {
-
-	}
+	TraceLog(LogType::General, "Hello,world\n");
+  if(FileExists("general.log")) {
+    TraceLog(LogType::General, "general.log exists");
+  };
+	return 0;
 }
