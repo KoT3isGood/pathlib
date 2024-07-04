@@ -51,7 +51,14 @@ void* CreateGPUBuffer(int size, void** buffer);
 void* CreateGPUImage(int x, int y, void** image);
 void CreateGPUImage(int x, int y, void* mapped, void** image);
 
-void LoadShader(unsigned char* vsSPV, unsigned char* fsSPV, int constantsSize,bool depthEnabled, void** shader);
+void LoadShader(unsigned char* vsSPV, unsigned char* fsSPV, int constantsSize, bool depthEnabled, void** shader);
 void LoadShader(unsigned char* csSPV,int constantsSize, void** shader);
-void LoadShader(unsigned char* rgenSPV, unsigned char* rchitSPV,unsigned char* rmissSPV, int constantsSize,void** shader);
+void LoadShader(unsigned char* rgenSPV, unsigned char* rchitSPV,unsigned char* rmissSPV, int constantsSize,void** shader) ;
+void SetConstants(void* constants, void* shader);
+void Record(int x, int y, void* image, void* shader);
+void Draw(int x, int y, void* shader);
+void EndRecord(void* shader);
 
+void DestroyGPUBuffer(void* buffer);
+void DestroyGPUImage(void* image);
+void DestroyShader(void* shader);

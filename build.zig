@@ -12,7 +12,7 @@ pub fn build(b: *std.Build) void {
     });
     pathlib.linkLibCpp();
     pathlib.addCSourceFiles(.{
-        .files = &.{"src/pathlib.cpp"},
+        .files = &.{ "src/pathlib.cpp", "src/pathdraw.cpp" },
     });
 
     b.installArtifact(pathlib);
