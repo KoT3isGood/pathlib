@@ -64,9 +64,14 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <NMakeOutput>zig-out/bin/pathlibtest.exe</NMakeOutput>
-    <NMakePreprocessorDefinitions>_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakePreprocessorDefinitions>
+    </NMakePreprocessorDefinitions>
     <NMakeBuildCommandLine>zig build</NMakeBuildCommandLine>
     <NMakeReBuildCommandLine>zig build</NMakeReBuildCommandLine>
+    <AdditionalOptions>/std:c++17</AdditionalOptions>
+    <OutDir />
+    <IntDir />
+    <NMakeIncludeSearchPath>thirdparty/</NMakeIncludeSearchPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <NMakeOutput>pathlib.exe</NMakeOutput>
@@ -80,7 +85,10 @@
     <NMakeOutput>pathlib.exe</NMakeOutput>
     <NMakePreprocessorDefinitions>NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
   </PropertyGroup>
-  <ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <BuildLog>
+      <Path>$(SolutionDir)/zig-out/build.log</Path>
+    </BuildLog>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="example\main.cpp" />
@@ -89,6 +97,7 @@
     <ClCompile Include="src\pathdraw.cpp" />
     <ClCompile Include="src\pathlib.cpp" />
     <ClCompile Include="src\pathnet.cpp" />
+    <ClCompile Include="src\vukan\base.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pathaudio.h" />
@@ -96,6 +105,7 @@
     <ClInclude Include="src\pathdraw.h" />
     <ClInclude Include="src\pathlib.h" />
     <ClInclude Include="src\pathnet.h" />
+    <ClInclude Include="src\vukan\base.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

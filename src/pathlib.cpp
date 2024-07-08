@@ -15,7 +15,7 @@ void SetTraceLogCallback(TraceLogCallback callback) {
 };
 
 
-void TraceLog(LogType logtype, const char* text, ...)
+void TraceLog(unsigned int logtype, const char* text, ...)
 {
       
     va_list args;

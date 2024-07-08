@@ -1,12 +1,11 @@
 #pragma once
-
 // Logging
 typedef enum {
 	General = 0,
-	Rendering,
+	Rendering = 1,
 } LogType;
-typedef void(*TraceLogCallback)(LogType logtype, const char* text, ...);
-void TraceLog(LogType logtype, const char* text, ...);
+typedef void(*TraceLogCallback)(unsigned int logtype, const char* text, ...);
+void TraceLog(unsigned int logtype, const char* text, ...);
 void SetTraceLogCallback(TraceLogCallback callback);
 
 // File system
